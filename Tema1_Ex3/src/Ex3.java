@@ -41,4 +41,28 @@ public class Ex3 {
         }
         return result;
     }
+
+    public  int[] multiply(int[] a, int digit) {
+        if (digit < 0 || digit > 9) {
+            throw new IllegalArgumentException("The multiplier must be a single digit");
+        }
+
+        int[] result = new int[a.length + 1];
+        int carry = 0;
+        for (int i = a.length - 1, j = a.length; i >= 0; i--, j--) {
+            int prod = a[i] * digit + carry;
+            result[j] = prod % 10;
+            carry = prod / 10;
+        }
+
+        result[0] = carry;
+
+        if (result[0] == 0) {
+            int[] temp = new int[a.length];
+            System.arraycopy(result, 1, temp, 0, a.length);
+            return temp;
+        } else {
+            return result;
+        }
+    }
 }

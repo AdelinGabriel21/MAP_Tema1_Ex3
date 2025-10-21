@@ -10,7 +10,11 @@ public class Main {
         int[] a3 = {8, 3, 0, 0, 0, 0, 0, 0, 0};
         int[] a4 = {5, 4, 0, 0, 0, 0, 0, 0, 0};
 
+        int[] a5 = {2, 3, 6, 0, 0, 0, 0, 0, 0};
+        int digit = 2;
+
         System.out.println(Arrays.toString(a1) + " + " + Arrays.toString(a2) + " = " + Arrays.toString(ex3.add(a1, a2)));
         System.out.println(Arrays.toString(a3) + " - " + Arrays.toString(a4) + " = " + Arrays.toString(ex3.subtract(a3, a4)));
+        System.out.println(Arrays.toString(a5) + " * " + digit + " = " + Arrays.toString(ex3.multiply(a5, digit)));
     }
 }
