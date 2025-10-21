@@ -21,4 +21,24 @@ public class Ex3 {
             return result;
         }
     }
+
+    public  int[] subtract(int[] a, int[] b) {
+        if  (a.length != b.length) {
+            throw new IllegalArgumentException("The numbers must be the same length");
+        }
+
+        int[] result = new int[a.length];
+        int borrow = 0;
+        for (int i = a.length - 1; i >= 0; i--) {
+            int diff = a[i] - b[i] - borrow;
+            if (diff < 0) {
+                diff += 10;
+                borrow = 1;
+            } else {
+                borrow = 0;
+            }
+            result[i] = diff;
+        }
+        return result;
+    }
 }
