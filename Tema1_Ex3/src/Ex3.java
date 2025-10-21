@@ -65,4 +65,20 @@ public class Ex3 {
             return result;
         }
     }
+
+    public  int[] divide(int[] a, int digit) {
+        if (digit < 0 || digit > 9) {
+            throw new IllegalArgumentException("The multiplier must be a single digit");
+        }
+
+        int[] quotient = new int[a.length];
+        int remainder = 0;
+        for (int i = 0; i < a.length; i++) {
+            int cur = remainder * 10 + a[i];
+            int q = cur / digit;
+            remainder = cur % digit;
+            quotient[i] = q;
+        }
+        return quotient;
+    }
 }
